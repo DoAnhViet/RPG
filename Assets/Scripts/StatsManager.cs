@@ -6,7 +6,10 @@ public class StatsManager : MonoBehaviour
     [Header("Combat Stats")]
     public int damage;
     public float weaponRange = 1;
-
+    public void UpdateMaxHealth(int amount)
+    {
+        StatsManager.Instance.maxHealth += amount;
+    }
     [Header("Movement Stats")]
     public int speed;
 
