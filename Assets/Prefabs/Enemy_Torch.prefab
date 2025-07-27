@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 6782942845138679610}
   - component: {fileID: 5669973469568117121}
   - component: {fileID: 4312947612308354598}
+  - component: {fileID: -6840409596024159272}
   m_Layer: 6
   m_Name: Enemy_Torch
   m_TagString: Untagged
@@ -240,6 +241,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  knockbackForce: 1
+  stunTime: 0
 --- !u!114 &7738512570839856911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +258,7 @@ MonoBehaviour:
   speed: 2
   attackRange: 1.2
   attackCooldown: 2
-  playerDetectRange: 3
+  playerDetectRange: 20
   detectionPoint: {fileID: 2423704501712265020}
   playerLayer:
     serializedVersion: 2
@@ -331,5 +334,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expReward: 3
-  currentHealth: 5
-  maxHealth: 5
+  currentHealth: 10
+  maxHealth: 10
+--- !u!114 &-6840409596024159272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609711247115133163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6ed5ea181cfd5041bc8f14afa9ea406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

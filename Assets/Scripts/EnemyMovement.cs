@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
 
     private float attackCooldownTimer;
     private int facingDirection = -1;
-    private EnemyState enemyState;
+    public EnemyState enemyState;
 
     private Rigidbody2D rb;
     private Transform player;
@@ -31,19 +31,22 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckForPlayer();
-        if (attackCooldownTimer > 0)
+        if (enemyState != EnemyState.Knockback)
         {
-            attackCooldownTimer -= Time.deltaTime;
-        }
-        if (enemyState == EnemyState.Chasing)
-        {
-            Chase();
-       
-        }
-        else if(enemyState == EnemyState.Attacking)
-        {
-            rb.linearVelocity = Vector2.zero;
+            CheckForPlayer();
+            if (attackCooldownTimer > 0)
+            {
+                attackCooldownTimer -= Time.deltaTime;
+            }
+            if (enemyState == EnemyState.Chasing)
+            {
+                Chase();
+
+            }
+            else if (enemyState == EnemyState.Attacking)
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
         }
     }
     void Chase()
@@ -75,7 +78,7 @@ public class EnemyMovement : MonoBehaviour
                 attackCooldownTimer = attackCooldown;
                 ChangeState(EnemyState.Attacking);
             }
-            else if (Vector2.Distance(transform.position, player.position) > attackRange)
+            else if (Vector2.Distance(transform.position, player.position) > attackRange && enemyState != EnemyState.Attacking)
             {
                 ChangeState(EnemyState.Chasing);
             }
@@ -93,9 +96,10 @@ public class EnemyMovement : MonoBehaviour
     {
         Idle,
         Chasing,
-        Attacking
+        Attacking,
+        Knockback
     }
-    void ChangeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
         {
         if (enemyState == EnemyState.Idle)
             anim.SetBool("isidle", false);
@@ -105,6 +109,9 @@ public class EnemyMovement : MonoBehaviour
 
         else if (enemyState == EnemyState.Attacking)
             anim.SetBool("isAttacking", false);
+       
+        else if (enemyState == EnemyState.Knockback)
+            anim.SetBool("isKnockback", false);
 
         enemyState = newState;
 
@@ -116,6 +123,10 @@ public class EnemyMovement : MonoBehaviour
 
         else if (enemyState == EnemyState.Attacking)
             anim.SetBool("isAttacking", true);
+
+        else if (enemyState == EnemyState.Knockback)
+            anim.SetBool("isKnockback", true);
+
 
     }
     private void OnDrawGizmosSelected()

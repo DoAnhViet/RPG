@@ -17,6 +17,20 @@ public class ExpManager : MonoBehaviour
     {
         UpdateUI();
     }
+    void Awake()
+    {
+        var d = SaveLoadManager.pendingLoadedData;
+        if (d != null)
+        {
+            level = d.level;
+            currentExp = d.currentExp;
+            expToLevel = d.expToLevel;
+            // (Có thể thêm expGrowthMultiplier nếu bạn lưu trong SaveData)
+            SaveLoadManager.pendingLoadedData = null;
+            Debug.Log("[ExpManager] Đã load lại state từ SaveData!");
+        }
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
@@ -24,6 +38,7 @@ public class ExpManager : MonoBehaviour
             GainExperience(2);
         }
     }
+
     private void OnEnable()
     {
         Enemy_Health.OnMonsterDefeated += GainExperience;
@@ -45,6 +60,15 @@ public class ExpManager : MonoBehaviour
     {
         level++;
         currentExp -= expToLevel;
+        var player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Animator anim = player.GetComponent<Animator>();
+            if (anim != null)
+            {
+                anim.SetTrigger("LevelUp");
+            }
+        }
         expToLevel = Mathf.RoundToInt(expToLevel * expGrowthMultiplier);
         if (level % 5 == 0)
         {
