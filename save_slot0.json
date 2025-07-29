@@ -1,8 +1,8 @@
 {
     "damage": 3,
     "speed": 5,
-    "maxHealth": 62,
-    "currentHealth": 62,
+    "maxHealth": 620,
+    "currentHealth": 620,
     "level": 14,
     "currentExp": 41,
     "expToLevel": 124,
