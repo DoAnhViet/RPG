@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pumpkin
   m_EditorClassIdentifier: 
   itemName: Pumbkin
-  itemDescription: Is it mushroom?
+  itemDescription: Is it pumpkin?
   icon: {fileID: 8389134475083476877, guid: 43e573dbd5080de43b073e4a08768dc4, type: 3}
   isGold: 0
   speed: 5

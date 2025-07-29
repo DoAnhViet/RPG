@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eaa4b604e01049c586015f1db71b3b9, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: 
-  itemName: Mushroom
-  itemDescription: Is it mushroom?
-  icon: {fileID: 8793915729297761979, guid: 9913f8c1507edf6469a95e9b96112ae4, type: 3}
-  isGold: 0
+  itemName: Gold
+  itemDescription: Gold hard cash.
+  icon: {fileID: -7942359355602504142, guid: 2c17f961c8087404db0b38e7e461dd93, type: 3}
+  isGold: 1
   speed: 0
   maxHealth: 0
-  currentHealth: 5
+  currentHealth: 0
   damage: 0
   duration: 0

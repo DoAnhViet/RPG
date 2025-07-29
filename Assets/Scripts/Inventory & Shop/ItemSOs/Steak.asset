@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Steak
   m_EditorClassIdentifier: 
   itemName: Steak
-  itemDescription: Is it mushroom?
+  itemDescription: Is it steak?
   icon: {fileID: 5558420398955925738, guid: 4b60f0adfda20b14992d3f2462dfa3c6, type: 3}
   isGold: 0
   speed: 0
