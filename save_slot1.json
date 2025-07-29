@@ -1,0 +1,19 @@
+{
+    "damage": 1,
+    "speed": 5,
+    "maxHealth": 13,
+    "currentHealth": 13,
+    "level": 1,
+    "currentExp": 5,
+    "expToLevel": 12,
+    "availablePoints": 0,
+    "skills": [],
+    "playerPosX": -6.456999778747559,
+    "playerPosY": -6.399576663970947,
+    "playerPosZ": 0.0,
+    "sceneIndex": 1,
+    "currentWave": 1,
+    "totalKills": 3,
+    "saveTime": "2025-07-28T21:23:09.1387965+07:00",
+    "playTime": 17.103199005126954
+}

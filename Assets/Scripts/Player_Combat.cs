@@ -7,8 +7,10 @@ public class Player_Combat : MonoBehaviour
     public LayerMask enemyLayer;
     public StatsUI statsUI;
     public Animator anim;
+    public float knockbackForce = 50;
     public float cooldown = 1;
-    private float timer; 
+    private float timer;
+    public float stunTime = 1;
     private void Update()
     {
         if (timer > 0)
@@ -33,7 +35,8 @@ public class Player_Combat : MonoBehaviour
             if (enemies.Length > 0)
             {
                 enemies[0].GetComponent<Enemy_Health>().ChangeHealth(-StatsManager.Instance.damage);
-            }
+             enemies[0].GetComponent<Enemy_Knockback>().Knockback(transform, knockbackForce, stunTime);
+        }
 
     }
     public void FinishAttacking()

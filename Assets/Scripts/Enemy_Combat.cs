@@ -6,13 +6,9 @@ public class Enemy_Combat : MonoBehaviour
     public Transform attackPoint;
     public float weaponRange;
     public LayerMask playerLayer;
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().ChangeHealth(-damage);
-        }
-    }
+    public float knockbackForce;
+    public float stunTime;
+
     public void Attack()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, weaponRange, playerLayer);
@@ -20,6 +16,7 @@ public class Enemy_Combat : MonoBehaviour
         if (hits.Length > 0)
         {
             hits[0].GetComponent<PlayerHealth>().ChangeHealth(-damage);
+            hits[0].GetComponent<PlayerMovement>().Knockback(transform, knockbackForce, stunTime);
         }
     }
     
