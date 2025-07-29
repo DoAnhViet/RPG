@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eaa4b604e01049c586015f1db71b3b9, type: 3}
+  m_Name: Pumpkin
+  m_EditorClassIdentifier: 
+  itemName: Pumbkin
+  itemDescription: Is it mushroom?
+  icon: {fileID: 8389134475083476877, guid: 43e573dbd5080de43b073e4a08768dc4, type: 3}
+  isGold: 0
+  speed: 5
+  maxHealth: 0
+  currentHealth: 0
+  damage: 0
+  duration: 0

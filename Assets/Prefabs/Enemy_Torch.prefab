@@ -258,11 +258,12 @@ MonoBehaviour:
   speed: 2
   attackRange: 1.2
   attackCooldown: 2
-  playerDetectRange: 20
+  playerDetectRange: 7
   detectionPoint: {fileID: 2423704501712265020}
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  enemyState: 0
 --- !u!58 &6782942845138679610
 CircleCollider2D:
   m_ObjectHideFlags: 0

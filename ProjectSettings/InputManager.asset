@@ -473,7 +473,7 @@ InputManager:
     m_Name: Slash
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left
+    negativeButton: 
     positiveButton: k
     altNegativeButton: 
     altPositiveButton: 
