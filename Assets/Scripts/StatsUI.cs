@@ -39,9 +39,23 @@ public class StatsUI : MonoBehaviour
     {
         statsSlots[1].GetComponentInChildren<TMP_Text>().text = "Speed: " + StatsManager.Instance.speed;
     }
+    public void UpdateHealth()
+    {
+        statsSlots[2].GetComponentInChildren<TMP_Text>()
+            .text = "Max HP: " + StatsManager.Instance.maxHealth;
+    }
+
+    public void UpdateRegen()
+    {
+        statsSlots[3].GetComponentInChildren<TMP_Text>()
+            .text = $"Regen: 1 per {StatsManager.Instance.regenInterval}s";
+    }
+
     public void UpdateAllStats()
     {
         UpdateDamage();
         UpdateSpeed();
+        UpdateHealth();
+        UpdateRegen();
     }
 }
